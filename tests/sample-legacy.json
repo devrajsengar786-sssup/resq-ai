@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "mission": {
+    "title": "Operation Lost Signal",
+    "subtitle": "Mountain forest • fictional training exercise",
+    "people": 6,
+    "objective": "Coordinate a search for six fictional missing trekkers.",
+    "status": "Planning",
+    "conditions": "Rain / intermittent communications"
+  },
+  "features": {
+    "clues": true,
+    "assignments": true,
+    "simulation": true,
+    "timeline": true
+  },
+  "hazardTypes": [
+    {
+      "id": "rain",
+      "label": "Heavy rain"
+    },
+    {
+      "id": "terrain",
+      "label": "Steep terrain"
+    },
+    {
+      "id": "signal",
+      "label": "Signal loss"
+    }
+  ],
+  "constraints": {
+    "maxRisk": 80,
+    "maxTravelMinutes": 90,
+    "notes": [
+      "All locations, teams and reports are fictional.",
+      "Confirm plans with a human operator; scores are illustrative."
+    ]
+  },
+  "weights": {
+    "evidence": 45,
+    "urgency": 30,
+    "access": 25,
+    "risk": 30
+  },
+  "zones": [
+    {
+      "id": "Z1",
+      "name": "North ridge",
+      "x": 27,
+      "y": 24,
+      "evidence": 55,
+      "urgency": 85,
+      "access": 35,
+      "risk": 72,
+      "travelMinutes": 65,
+      "hazards": [
+        "rain",
+        "terrain"
+      ],
+      "searched": false
+    },
+    {
+      "id": "Z2",
+      "name": "River crossing",
+      "x": 53,
+      "y": 54,
+      "evidence": 72,
+      "urgency": 75,
+      "access": 60,
+      "risk": 58,
+      "travelMinutes": 40,
+      "hazards": [
+        "rain"
+      ],
+      "searched": false
+    },
+    {
+      "id": "Z3",
+      "name": "Forest shelter",
+      "x": 76,
+      "y": 29,
+      "evidence": 38,
+      "urgency": 60,
+      "access": 85,
+      "risk": 25,
+      "travelMinutes": 25,
+      "hazards": [
+        "signal"
+      ],
+      "searched": false
+    },
+    {
+      "id": "Z4",
+      "name": "Old trail",
+      "x": 25,
+      "y": 73,
+      "evidence": 30,
+      "urgency": 45,
+      "access": 75,
+      "risk": 35,
+      "travelMinutes": 35,
+      "hazards": [
+        "signal"
+      ],
+      "searched": false
+    },
+    {
+      "id": "Z5",
+      "name": "Eastern valley",
+      "x": 78,
+      "y": 78,
+      "evidence": 48,
+      "urgency": 70,
+      "access": 50,
+      "risk": 63,
+      "travelMinutes": 55,
+      "hazards": [
+        "terrain",
+        "rain"
+      ],
+      "searched": false
+    }
+  ],
+  "teams": [
+    {
+      "id": "T1",
+      "name": "Alpha",
+      "members": 4,
+      "skills": "Navigation, first aid",
+      "available": true
+    },
+    {
+      "id": "T2",
+      "name": "Bravo",
+      "members": 3,
+      "skills": "Terrain, communications",
+      "available": true
+    },
+    {
+      "id": "T3",
+      "name": "Charlie",
+      "members": 4,
+      "skills": "Tracking, logistics",
+      "available": true
+    }
+  ],
+  "clues": [
+    {
+      "id": "C1",
+      "zoneId": "Z2",
+      "text": "Fictional witness reports a bright backpack near the crossing.",
+      "confidence": 70,
+      "source": "Sample witness",
+      "time": "2026-10-14T12:00:00Z"
+    }
+  ],
+  "assignments": [],
+  "timeline": []
+}

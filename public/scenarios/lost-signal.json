@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "mission": {
+    "title": "Operation Lost Signal",
+    "subtitle": "Sector Beta · six simulated trekkers · official challenge",
+    "people": 6,
+    "objective": "Turn incomplete, conflicting telemetry into human-reviewed search priorities and resource assignments.",
+    "status": "Planning",
+    "conditions": "Rain, stale pings and radio dead zones; training simulation"
+  },
+  "features": {
+    "clues": true,
+    "assignments": true,
+    "simulation": true,
+    "timeline": true
+  },
+  "hazardTypes": [
+    {
+      "id": "rain",
+      "label": "Heavy rain"
+    },
+    {
+      "id": "terrain",
+      "label": "Steep terrain"
+    },
+    {
+      "id": "signal",
+      "label": "Radio dead zone"
+    },
+    {
+      "id": "mudslide",
+      "label": "Mudslide exposure"
+    }
+  ],
+  "constraints": {
+    "maxRisk": 85,
+    "maxTravelMinutes": 120,
+    "notes": [
+      "Synthetic terrain and travel estimates; no real routes.",
+      "Urgency and confidence are separate illustrative indices.",
+      "Daylight check assumes round-trip travel plus 30-minute buffer; search duration is not modeled."
+    ]
+  },
+  "weights": {
+    "evidence": 45,
+    "urgency": 30,
+    "access": 25,
+    "risk": 30
+  },
+  "zones": [
+    {
+      "id": "B-N",
+      "name": "B-North · Ridge Trail",
+      "x": 30,
+      "y": 24,
+      "evidence": 40,
+      "urgency": 60,
+      "access": 55,
+      "risk": 45,
+      "travelMinutes": 45,
+      "hazards": [
+        "rain",
+        "terrain"
+      ],
+      "requiredSkills": [
+        "navigation"
+      ],
+      "searched": false
+    },
+    {
+      "id": "C-E",
+      "name": "C-East · Gorge Creek",
+      "x": 75,
+      "y": 46,
+      "evidence": 20,
+      "urgency": 80,
+      "access": 35,
+      "risk": 60,
+      "travelMinutes": 65,
+      "hazards": [
+        "signal",
+        "mudslide"
+      ],
+      "requiredSkills": [
+        "terrain"
+      ],
+      "searched": false
+    },
+    {
+      "id": "A-S",
+      "name": "A-South · Pine Basin",
+      "x": 45,
+      "y": 76,
+      "evidence": 55,
+      "urgency": 55,
+      "access": 80,
+      "risk": 25,
+      "travelMinutes": 25,
+      "hazards": [
+        "rain"
+      ],
+      "requiredSkills": [
+        "navigation"
+      ],
+      "searched": false
+    },
+    {
+      "id": "D-W",
+      "name": "D-West · Old Mine Pass",
+      "x": 18,
+      "y": 53,
+      "evidence": 15,
+      "urgency": 80,
+      "access": 45,
+      "risk": 55,
+      "travelMinutes": 60,
+      "hazards": [
+        "terrain",
+        "signal"
+      ],
+      "requiredSkills": [
+        "terrain"
+      ],
+      "searched": false
+    }
+  ],
+  "teams": [
+    {
+      "id": "T1",
+      "name": "Alpha",
+      "members": 4,
+      "skills": "Navigation, first aid",
+      "capabilities": [
+        "navigation",
+        "first-aid"
+      ],
+      "medicalKits": 2,
+      "available": true
+    },
+    {
+      "id": "T2",
+      "name": "Bravo",
+      "members": 3,
+      "skills": "Terrain, communications",
+      "capabilities": [
+        "terrain",
+        "communications"
+      ],
+      "medicalKits": 1,
+      "available": true
+    },
+    {
+      "id": "T3",
+      "name": "Charlie",
+      "members": 4,
+      "skills": "Navigation, terrain, logistics",
+      "capabilities": [
+        "navigation",
+        "terrain",
+        "logistics"
+      ],
+      "medicalKits": 0,
+      "available": true
+    }
+  ],
+  "clues": [],
+  "assignments": [],
+  "timeline": [],
+  "eventVersion": "lost-signal-official-v1",
+  "conditions": {
+    "now": "2026-10-15T10:00:00+05:30",
+    "weather": "rain",
+    "daylightMinutes": 300,
+    "closedZones": []
+  },
+  "model": {
+    "urgencyWeights": {
+      "medical": 30,
+      "battery": 20,
+      "staleness": 25,
+      "exposure": 25
+    },
+    "driftKmPerHour": 0.35,
+    "returnBufferMinutes": 30,
+    "priorityWeights": {
+      "urgency": 60,
+      "evidence": 25,
+      "access": 15
+    },
+    "sos": {
+      "maxBoost": 15,
+      "freshnessHours": 6,
+      "staleFraction": 0.25
+    }
+  },
+  "trekkers": [
+    {
+      "id": "TRK-01",
+      "name": "Aarav Sharma",
+      "age": 28,
+      "zoneId": "B-N",
+      "lastPing": "2026-10-15T07:15:00+05:30",
+      "elevation": 2450,
+      "signal": "Weak (1 bar)",
+      "signalQuality": 45,
+      "battery": 14,
+      "injurySeverity": 50,
+      "medicalNote": "Reported minor ankle injury",
+      "baseRadiusKm": 0.25,
+      "gear": "Thermal tent, emergency whistle, offline GPS",
+      "notes": "Last transmission reported companion with him.",
+      "companion": "TRK-02",
+      "status": "missing",
+      "sos": {
+        "status": "none",
+        "reportedAt": null,
+        "source": ""
+      }
+    },
+    {
+      "id": "TRK-02",
+      "name": "Maya Patel",
+      "age": 26,
+      "zoneId": "B-N",
+      "lastPing": "2026-10-15T07:18:00+05:30",
+      "elevation": 2430,
+      "signal": "Weak (1 bar)",
+      "signalQuality": 45,
+      "battery": 22,
+      "injurySeverity": 35,
+      "medicalNote": "Medical condition unreported; provisional input 35/100",
+      "baseRadiusKm": 0.25,
+      "gear": "First-aid pack, 2L water, trekking poles",
+      "notes": "Traveling alongside Aarav; last voice ping 07:18.",
+      "companion": "TRK-01",
+      "status": "missing",
+      "sos": {
+        "status": "none",
+        "reportedAt": null,
+        "source": ""
+      }
+    },
+    {
+      "id": "TRK-03",
+      "name": "Rohan Varma",
+      "age": 34,
+      "zoneId": "C-E",
+      "lastPing": "2026-10-15T06:40:00+05:30",
+      "elevation": 1820,
+      "signal": "Lost / dead zone",
+      "signalQuality": 20,
+      "battery": null,
+      "batteryNote": "Unknown (<10% in brief)",
+      "injurySeverity": 35,
+      "medicalNote": "Medical condition unreported; provisional input 35/100",
+      "baseRadiusKm": 0.6,
+      "gear": "Solar pack (ineffective in rain), bivvy bag",
+      "notes": "Cell tower ping at edge of gorge before signal dropped.",
+      "status": "missing",
+      "batteryUpperBound": 10,
+      "sos": {
+        "status": "none",
+        "reportedAt": null,
+        "source": ""
+      }
+    },
+    {
+      "id": "TRK-04",
+      "name": "Ananya Sen",
+      "age": 24,
+      "zoneId": "A-S",
+      "lastPing": "2026-10-15T08:05:00+05:30",
+      "elevation": 1950,
+      "signal": "Moderate / intermittent",
+      "signalQuality": 65,
+      "battery": 45,
+      "injurySeverity": 35,
+      "medicalNote": "SOS received; medical condition unreported",
+      "baseRadiusKm": 0.8,
+      "gear": "Waterproofs, satellite messenger (pairing unconfirmed)",
+      "notes": "SOS burst; coordinates fluctuated by 800m.",
+      "status": "missing",
+      "sos": {
+        "status": "active",
+        "reportedAt": "2026-10-15T08:05:00+05:30",
+        "source": "Official simulated dossier: SOS beacon at 08:05",
+        "reviewedBy": "Sample scenario",
+        "note": "Reported SOS; location still uncertain."
+      }
+    },
+    {
+      "id": "TRK-05",
+      "name": "Vikram Malhotra",
+      "age": 41,
+      "zoneId": "D-W",
+      "lastPing": "2026-10-15T05:55:00+05:30",
+      "elevation": 2800,
+      "signal": "No signal / stale",
+      "signalQuality": 15,
+      "battery": null,
+      "batteryNote": "Critical / zero; exact value not confirmed",
+      "injurySeverity": 35,
+      "medicalNote": "Medical condition unreported; provisional input 35/100",
+      "baseRadiusKm": 0.6,
+      "gear": "Cold-weather clothing, map and compass",
+      "notes": "Experienced mountaineer; ranger reported flashlight sweeps.",
+      "status": "missing",
+      "batteryCategory": "critical",
+      "sos": {
+        "status": "none",
+        "reportedAt": null,
+        "source": ""
+      }
+    },
+    {
+      "id": "TRK-06",
+      "name": "Dr. Priyamvada Iyer",
+      "age": 37,
+      "zoneId": "A-S",
+      "lastPing": "2026-10-15T08:12:00+05:30",
+      "elevation": 1980,
+      "signal": "Intermittent ping",
+      "signalQuality": 55,
+      "battery": 38,
+      "injurySeverity": 35,
+      "medicalNote": "Fall mentioned; injury severity unreported",
+      "baseRadiusKm": 0.3,
+      "gear": "Trauma kit, satellite phone (damaged antenna)",
+      "notes": "Attempted satellite call had high packet loss.",
+      "status": "missing",
+      "sos": {
+        "status": "none",
+        "reportedAt": null,
+        "source": ""
+      }
+    }
+  ]
+}
