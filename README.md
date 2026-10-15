@@ -24,3 +24,6 @@ Inspect a profile and breakdown; update battery with a note; submit and review a
 
 ## Provenance
 Challenge: https://boxuser.vercel.app/. A configurable foundation was prepared before the event and adapted to the six-profile brief during the event. AI assistance was used. Disclose reuse and follow organizer rules. Git history begins with this snapshot and does not reconstruct earlier development.
+
+## Install app
+Use Install App in the header. Chrome/Edge can show a native installation prompt when eligible; otherwise the button explains browser-menu installation. On iOS use Safari → Share → Add to Home Screen. The installed app opens standalone. Offline use requires a successful first visit; data remains device/browser-local.
